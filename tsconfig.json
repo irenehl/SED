@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": ".",
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -18,11 +18,11 @@
       "./src/types"
     ],
     "paths": {
-      "@components/" : ["src/components/*"],
-      "@models/" : ["src/models/*"],
-      "@interfaces/" : ["src/interfaces/*"],
-      "@types/" : ["src/types/*"],
-      "@middlewares/" : ["src/middlewares/*"],
+      "@components/*" : ["src/components/*"],
+      "@models/*" : ["src/models/*"],
+      "@interfaces/*" : ["src/interfaces/*"],
+      "@types/*" : ["src/types/*"],
+      "@middlewares/*" : ["src/middlewares/*"],
     }
   },
   "include": ["next-env.d.ts", "*/.ts", "*/.tsx"],
