@@ -21,7 +21,6 @@ const User = Schema({
     },
     admin: Boolean,
     phone: String,
-    dob: Date
 }) 
 
 module.exports = models.User || model('User', User)

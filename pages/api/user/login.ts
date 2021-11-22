@@ -10,13 +10,12 @@ const verifyToken = require('@middlewares/auth');
 
 const handler = nc<NextApiRequest, NextApiResponse>()
     .post(async (req, res) => {
-        // Iniciar sesion
         const { username, password } = req.body;
 
         const user = await User.findOne({ username });
 
         if (!user)
-            return res.status(404).json({ error: 'User not found' });
+            return res.status(404).json({ error: 'Este usuario no existe ' });
 
         const validPassword = await bcrypt.compare(password, user.password);
 
@@ -26,7 +25,7 @@ const handler = nc<NextApiRequest, NextApiResponse>()
             return res.status(200).json({ token });
         }
         else
-            return res.status(401).json({ error: 'Wrong credentials' });
+            return res.status(401).json({ error: 'Credenciales invalidas' });
     })
     .use("/update", verifyToken)
     .put("/update", async (req, res) => {
